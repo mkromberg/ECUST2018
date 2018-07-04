@@ -28,7 +28,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <h2>July 5th, 2018</h2>
 </a>
 </div>
-<p>Materials available at <a href="https://github.com/mkromberg/ECUST2018" class="external_link">https://github.com/mkromberg/ECUST2018</a></p>
+<p>Materials available at <a href="https://github.com/mkromberg/ECUST" class="external_link">https://github.com/mkromberg/ECUST</a></p>
 <div class="h_tag">
 <a href="#Morten-Kromberg" id="Morten-Kromberg" class="autoheader_anchor">
 <h2>Morten Kromberg</h2>
@@ -49,7 +49,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li><a href="http://help.dyalog.com" class="external_link">http://help.dyalog.com</a> online help</li>
 <li><a href="http://doc.dyalog.com" class="external_link">http://docs.dyalog.com</a> manuals etc</li>
 <li><a href="http://www.dyalog.com/mastering-dyalog-apl.htm" class="external_link">http://http://www.dyalog.com/mastering-dyalog-apl.htm</a> Introduction to Dyalog APL by Bernard Legrand</li>
-<li>Google: Try e.g. <a href="https://www.google.co.in/?q=dyalog+apl+rank+operator" class="external_link">https://www.google.co.in/?q=dyalog+apl+rank+operator</a></li>
+<li>Google: Try e.g. <a href="https://www.google.com/?q=dyalog+apl+power+operator" class="external_link">https://www.google.com/?q=dyalog+apl+power+operator</a></li>
 </ul>
 <div class="h_tag">
 <a href="#Morning" id="Morning" class="autoheader_anchor">
@@ -57,13 +57,10 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 </a>
 </div>
 <ul>
-<li>Installing Dyalog and keyboard layouts (http://dyalog.com/apl-font-keyboard.htm).</li>
+<li>Verifying Dyalog and keyboard installations (http://dyalog.com/apl-font-keyboard.htm).</li>
 <li>Entering APL glyphs from the keyboard:
 <ul>
 <li>Click on language bar (hover for help)</li>
-<li>Use double back-tick with auto-complete (Mac+Linux/RIDE only)</li>
-<li>Use back-tick + letter (Mac+Linux/RIDE only)</li>
-<li>Use modifier keys</li>
 </ul></li>
 <li>Configuration: please use <code>]box on</code>.</li>
 <li>TryAPL (http://tryapl.org/) has a floating soft keyboard, or you can use the IME (Windows) or Mac &amp; Linux keyboard layouts.</li>
@@ -73,7 +70,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <h2>Introduction</h2>
 </a>
 </div>
-<p>Powerpoint slides (1-8):</p>
+<p>Powerpoint slides 1-12:</p>
 <ul>
 <li>How APL evolved from a mathematical notation.</li>
 <li>Started as “Iverson notation”, used on the blackboard for teaching.</li>
@@ -119,17 +116,17 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>Unlike many languages (e.g. C, Java), this goes for user-defined functions too.</li>
 <li><em>All</em> functions associate right: <code>3×2+1</code> is <code>3×(2+1)</code>.</li>
 </ul>
-<p><strong>Exercise 01:</strong> go through quickly as a group, introducing some scalar functions:</p>
+<p><strong>Exercise 00:</strong> As a group:</p>
 <p>What do these expressions evaluate to?</p>
-<p>3+2 3<em>2 ⍝ * is not multiplication! 3×2 9</em>0.5 ⍝ square root 6÷2 5-3-1 ⍝ not 1 1 2 3 -1 + 2⍝ not 1 ¯1 + 2 1 + 2 3 1 2 + 3 1 2 + 3 4 1 2 + 3 4 5 ⍝ errors: see later 1÷2 3÷4 1 (2 3) + (4 5) 6 ⍝ as if (1 1)(2 3) + (4 5)(6 6)</p>
+<p>3+2 3<em>2 ⍝ * is not multiplication - try F1 help! 3×2 9</em>0.5 ⍝ square root 6÷2 5-3-1 ⍝ not 1 1 2 3 -1 + 2⍝ not 1 ¯1 + 2 1 + 2 3 1 2 + 3 1 2 + 3 4 1 2 × 3 4 1 2 ÷ 3 4 1 2 + 3 4 5 ⍝ errors: see later 1÷2 3÷4 1 (2 3) + (4 5) 6 ⍝ as if (1 1)(2 3) + (4 5)(6 6)</p>
 <ul>
 <li>Conformability rules for scalar functions: vectors must have same length, or either argument can be a scalar (“scalar extension”)</li>
 <li>Assignment uses the left arrow to name an array, <code>x←3</code>.</li>
 </ul>
-<p><strong>Exercise 02</strong> (introducing assignment):</p>
+<p><strong>Exercise 01</strong> (introducing assignment):</p>
 <p>What do these expressions do?</p>
-<p>x←3 ⍝ result of assignment isn't printed x+x y+(y←4) ⍝ R-to-L execution guaranteed here, pass through result (x y z)←1 2 3 (x y)←y x</p>
-<p><strong>Exercise 03</strong> (first sight of a non-scalar function):</p>
+<p>x←3 ⍝ result of assignment isn't printed x+x y+(y←4) ⍝ R-to-L execution guaranteed here, pass through result (x y z)←1 2 3 (x y)←y x q←x x q x←4 x q ⍝ arrays have value semantics</p>
+<p><strong>Exercise 02</strong> (first sight of a non-scalar function):</p>
 <p>Try these expressions:</p>
 <p>5=2+3 ⍝ not “true” but “1” A←⍳3 A=1 2 3 A≡1 2 3 ⍝ non-scalar function</p>
 <div class="h_tag">
@@ -147,9 +144,9 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li><em>All</em> primitives work on arrays and return arrays.</li>
 <li>Strings are just vectors of characters.</li>
 </ul>
-<p><strong>Exercise 04</strong> (introducing some structural primitives):</p>
+<p><strong>Exercise 03</strong> (introducing some structural primitives):</p>
 <p>Try:</p>
-<p>⍴1 2 3 ⍴'JAY' ⍳4 ⍴⍳4 ⌽⍳4 4↑'BANGALORE' ¯4↑'BANGALORE' ⍴(1 2 3)(4 5 6) ⍴'Morten' 'Kromberg' 5⍴'JAY' ⍝ introduce Reshape A←3 3⍴⍳9 A ⍝ display is “row major” ⍴A ⍴⍴A ⌽A ⊖A ⍝ discuss rank operator later ,A 3 3⍴'APL' 2 3 4⍴⍳24 ⍝ display is in planes B←2 3 4 5 6 7⍴99 ⍝ N.B. don't display this! ⍴B ⍴⍴B</p>
+<p>]boxing on ⍴1 2 3 ⍴'JAY' ⍳4 ⍴⍳4 ⌽⍳4 5↑'SHANGHAI' ¯3↑'SHANGHAI' ⍴(1 2 3)(4 5 6) ⍴'Morten' 'Kromberg' 5⍴'JAY' ⍝ introduce Reshape A←3 3⍴⍳9 A ⍝ display is “row major” ⍴A ⍴⍴A ⌽A ⊖A ⍉A ,A ↓A ⍴↓A ↑(1 2 3)(4 5 6) ⍪1 2 3 ⍴⍪1 2 3 3 3⍴'APL' 2 3 4⍴⍳24 ⍝ display is in planes B←2 3 4 5 6 7⍴99 ⍝ N.B. don't display this! ⍴B ⍴⍴B</p>
 <ul>
 <li>Other languages have scalars and arrays, but in APL there is no such distinction.</li>
 <li>Every array has a rank. What is the rank of a scalar? Try it! What is the shape of a scalar? Compare with <code>⍳0</code> and <code>⍬</code>.</li>
@@ -159,16 +156,33 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>(Muse: “there's no access to the mote”. See Trenchard More's papers on “Nested Rectangular Arrays”.)</li>
 <li>Using the array as the fundamental type means that performance can be very good, even though it's interpreted.</li>
 </ul>
+<p><strong>Exercise 04</strong> (operators)</p>
+<p>Try:</p>
+<p>+/2 3 4 ⍝ “summation over” (KEI) ×/2 3 4 ⍝ “product over” (KEI) ⌈/2 3 4 ≠/1 0 1 1 ⍝ parity</p>
+<ul>
+<li><code>/</code> here is an operator called Reduce (or fold)</li>
+<li>(Monadic) operators take a function operand on their <em>left</em>.</li>
+<li>So <code>+/</code> is “plus reduce”, or “sum”.</li>
+<li>Reduce inserts its operand function in the spaces: <code>1+2+3</code></li>
+<li>Generalises in ways that are more useful than you might expect! (See http://www.dyalog.com/blog/2014/11/musings-on-reduction/)</li>
+</ul>
+<p>Inner product:</p>
+<p>1 2 3 +.× 4 5 6 +/ 1 2 3 × 4 5 6 A←2 2⍴1 2 3 4 A +.× A ⍴ (2 3 4⍴⍳24) +.× (4 5 6⍴⍳120) (3 4 5 +.<em> 2) * 0.5 'ABC' ∨.= 'APL'</p>
+<ul>
+<li><em>Dyadic</em> operators also take an operand on the right.</li>
+<li>All dyadic operators are left-associative (cf functions).</li>
+<li><code>.</code> (dot) is a <em>dyadic</em> operator called Inner Product:</li>
+</ul>
+<p>X←⍳4 X ∘.+ X X ∘.× X X ∘.⌈ X X ∘.= X ⍴ (2 3⍴⍳6) ∘.+ (4 5⍴⍳20)</p>
+<ul>
+<li>As a special case, left operand of <code>∘</code> gives Outer Product (or table):</li>
+</ul>
 <div class="h_tag">
-<a href="#Workspaces-and-scripts" id="Workspaces-and-scripts" class="autoheader_anchor">
-<h2>Workspaces and scripts</h2>
+<a href="#Some-thoughts-about-MatLab-vs-APL" id="Some-thoughts-about-MatLab-vs-APL" class="autoheader_anchor">
+<h2>Some thoughts about MatLab vs APL</h2>
 </a>
 </div>
-<p>Powerpoint (9-10)</p>
-<ul>
-<li>Introduce )save and )load as a way to take a snapshot of the VM</li>
-<li>And ]save and ]load to work with functions as text files</li>
-</ul>
+<p>Powerpoint slides 13-15</p>
 <div class="h_tag">
 <a href="#Numbers" id="Numbers" class="autoheader_anchor">
 <h2>Numbers</h2>
@@ -179,14 +193,13 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>Users don't have to think about data types.</li>
 <li>Automatic promotion on overflow; occasional demotion on heap compaction / garbage collection.</li>
 </ul>
-<p><strong>Exercise 06</strong> (more scalar arithmetic):</p>
+<p><strong>Exercise 05</strong> (more scalar arithmetic):</p>
 <p>Try:</p>
 <p>0 0 1 1 ∨ 0 1 0 1 0 0 1 1 ∧ 0 1 0 1 15 ∨ 35 15 ∧ 35 3÷4 <em>1 ○1 2</em>0.5 ¯1<em>0.5 3</em>99 3<em>999</p>
-<div class="h_tag">
-<a href="#Booleans" id="Booleans" class="autoheader_anchor">
-<h2>Booleans</h2>
-</a>
-</div>
+<p><strong>Exercise 06</strong> (Random Numbers):</p>
+<p>Try:</p>
+<p>? 6 ? 10 ⍴ 6 ? 0 0 0 3 ? 4 ⍝ NB not a scalar function</p>
+<p><strong>Exercise 07</strong> (Booleans)</p>
 <ul>
 <li>Booleans are just numbers 0 and 1 (we saw this with <code>=</code>).</li>
 <li>Knuth even called this “Iverson's convention” in his paper “Two Notes on Notation” (https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/knuth403-422.pdf).</li>
@@ -195,26 +208,44 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>(Morten Kromberg calls it loop-free programming.)</li>
 <li>Coming back into fashion because of GPUs.</li>
 </ul>
-<p><strong>Exercise 07</strong> (boolean tricks):</p>
 <p>Try:</p>
-<p>A←1 ¯2 3 4 ¯5 A&gt;0 (A&gt;0)/A 2 3 0/'XYZ' B←0 1 0 1 1 0 0 1 B/⍳⍴B</p>
+<p>A←1 ¯2 3 4 ¯5 A&gt;0 +/A&gt;0 (A&gt;0)/A 2 3 0/'XYZ' B←0 1 0 1 1 0 0 1 B/⍳⍴B ⍸B</p>
 <div class="h_tag">
-<a href="#Searching-and-Sorting" id="Searching-and-Sorting" class="autoheader_anchor">
-<h2>Searching and Sorting</h2>
+<a href="#Indexing-and-partial-assignment" id="Indexing-and-partial-assignment" class="autoheader_anchor">
+<h2>Indexing and partial assignment</h2>
 </a>
 </div>
-<p><strong>Exercise 07a</strong> (searching and sorting):</p>
+<p><strong>Exercise 08</strong> (indexing)</p>
+<p>Try:</p>
+<p>vec←'SHANGHAI' vec[5] mat←3 4⍴⍳12 mat[2;3] mat[2;] Cities←'SHANGHAI' 'LONDON' Cities[2] Cities[2 1] Cities[⊂2 1] [2]¨Cities 2⊃¨Cities ⊃mat '.⌹'[1+1 7 4 2∘.≥⍳10] ⍝ Assignment mat[2;3]←99 mat A←B←⍳10 B[2]←99 A B (3↑B)←0 B</p>
+<ul>
+<li>N.B. bracket indexing can't be used as an operand function :-(</li>
+<li>Using an array <em>inside</em> the brackets can be very useful: <code>'.⌹'[mat]</code></li>
+<li>Indexed assignment works intuitively: <code>vec[3]←99</code></li>
+<li>N.B. arrays still have <strong>value</strong> semantics; other namings of the same array are <em>not</em> affected.</li>
+<li>Selective assignment: <code>(3↑vec)←4 5 6</code> <em>also</em> works intuitively!</li>
+<li>But N.B. only for “structural” primitive functions; you can't do <code>(0×A)←1</code>.</li>
+</ul>
+<div class="h_tag">
+<a href="#User-Defined-Functions" id="User-Defined-Functions" class="autoheader_anchor">
+<h2>User Defined Functions</h2>
+</a>
+</div>
+<p><strong>Exercise 09</strong> (single line dfns):</p>
+<p>Try:</p>
+<p>{⍺+⍵} 3{⍺+⍵}4 3{⍵+⍵}4 {⍵+⍵}4 {⍺+⍺}4 where←{⍵/⍳⍴⍵} where 0 1 0 1 1 0 0 1 disc←{(a b c)←⍵ ⋄ (b<em>2)-4×a×c} disc 1 ¯1 ¯1 ⍝ (defining equation of the golden ratio)</p>
+<p><strong>Exercise 10</strong> (searching and sorting):</p>
 <p>Try:</p>
 <p>'THE CAT IN THE HAT'∊'AEIOU' 'AT'⍷'THE CAT IN THE HAT' 'THE CAT IN THE HAT'~'AEIOU' 3 1 4 1 5 9 ⍳ 1 2 3 4 (3 3⍴'CATHATSAT')⍳2 3⍴'HATMAT' 'ABCD'∪'DEFG' 'ABCD'∩'DEFG' ⍋pi←3 1 4 1 5 9 pi[⍋pi]</p>
+<p><strong>Exercise 11</strong> (more operators):</p>
+<p>Try:</p>
+<p>⍝ Each: ¨</p>
+<p>A←'Jay' 'Foad' ⍴A ⍴¨A ⌽A ⌽¨A</p>
+<p>⍝ Key: ⌸</p>
+<p>x←('zero' 'one' 'two' 'three' 'four')[?20⍴5] x y←?20⍴10 y x {⍺ ⍵}⌸ y x {⍺,≢⍵}⌸ y x {⍺,+⌿⍵}⌸ y x {⍺,⌈⌿⍵}⌸ y</p>
 <div class="h_tag">
-<a href="#Tour-De-Force-2-Index-Selfie" id="Tour-De-Force-2-Index-Selfie" class="autoheader_anchor">
-<h2>Tour De Force 2: Index Selfie</h2>
-</a>
-</div>
-<p>see file://Talks/Tour de Force/2.htm</p>
-<div class="h_tag">
-<a href="#Defined-functions" id="Defined-functions" class="autoheader_anchor">
-<h2>Defined functions</h2>
+<a href="#Defined-functions-Continued" id="Defined-functions-Continued" class="autoheader_anchor">
+<h2>Defined functions, Continued</h2>
 </a>
 </div>
 <ul>
@@ -222,11 +253,6 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>MANY examples: http://dfns.dyalog.com</li>
 <li>Defined in braces, with <code>⍺</code> and <code>⍵</code> standing for the arguments.</li>
 <li>Functions have at most two arguments, but it's easy to make an argument tuple and decompose it with strand assignment.</li>
-</ul>
-<p><strong>Exercise 08</strong> (single line dfns):</p>
-<p>Try:</p>
-<p>{⍺+⍵} 3{⍺+⍵}4 3{⍵+⍵}4 {⍵+⍵}4 {⍺+⍺}4 where←{⍵/⍳⍴⍵} where 0 1 0 1 1 0 0 1 disc←{(a b c)←⍵ ⋄ (b<em>2)-4×a×c} disc 1 ¯1 ¯1 ⍝ (defining equation of the golden ratio)</p>
-<ul>
 <li>There is only one control structure: the guard.</li>
 <li>Dfns consist of a single expression preceded by zero or more local definitions and guards.</li>
 <li>At a pinch, you can use diamonds to separate “lines”.</li>
@@ -240,206 +266,17 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>User defined functions can Just Work on arrays of arbitrary rank! See dfns.easter (http://dfns.dyalog.com/n_easter.htm)</li>
 </ul>
 <div class="h_tag">
-<a href="#Operators" id="Operators" class="autoheader_anchor">
-<h2>Operators</h2>
-</a>
-</div>
-<p>+/1 2 3</p>
-<ul>
-<li><code>/</code> here is an operator called Reduce (or fold)</li>
-<li>(Monadic) operators take a function operand on their <em>left</em>.</li>
-<li>So <code>+/</code> is “plus reduce”, or “sum”.</li>
-<li>Reduce inserts its operand function in the spaces: <code>1+2+3</code></li>
-<li>Generalises in ways that are more useful than you might expect! (See http://www.dyalog.com/blog/2014/11/musings-on-reduction/)</li>
-</ul>
-<p><strong>Exercise 10</strong> (operators):</p>
-<p>Try:</p>
-<p>+/2 3 4 ⍝ “summation over” (KEI) ×/2 3 4 ⍝ “product over” (KEI) ⌈/2 3 4 ≠/1 0 1 1 ⍝ parity</p>
-<ul>
-<li><code>¨</code> (dieresis) is an operator called Each (or map):</li>
-</ul>
-<p>Try:</p>
-<p>A←'Jay' 'Foad' ⍴A ⍴¨A ⌽A ⌽¨A</p>
-<ul>
-<li><code>⍨</code> is an operator called Commute (see <em>Tacit programming</em>, later):</li>
-</ul>
-<p>Try:</p>
-<p>2<em>3 2</em>⍨3 <em>⍨3</p>
-<ul>
-<li><em>Dyadic</em> operators also take an operand on the right.</li>
-<li>All dyadic operators are left-associative (cf functions).</li>
-<li><code>.</code> (dot) is a <em>dyadic</em> operator called Inner Product:</li>
-</ul>
-<p>Try:</p>
-<p>1 2 3 +.× 4 5 6 +/ 1 2 3 × 4 5 6 A←2 2⍴1 2 3 4 A +.× A +.×⍨A ⍝ function vs operator binding makes this very neat +.×/A A ⍴ (2 3 4⍴⍳24) +.× (4 5 6⍴⍳120) ⍝ arbitrary ranks 0.5 <em>⍨ 3 4 5 +.</em> 2 ⍝ scalar extension 'ABC' ∨.= 'APL'</p>
-<ul>
-<li>As a special case, left operand of <code>∘</code> gives Outer Product (or table):</li>
-</ul>
-<p>Try:</p>
-<p>∘.+ ⍨ ⍳4 ⍝ “addition table” (KEI) ∘.× ⍨ ⍳4 ⍝ “multiplication table” (KEI) ∘.⌈ ⍨ ⍳4 ⍝ maximum table ∘.= ⍨ ⍳4 ⍝ identity matrix ⍴ (2 3⍴⍳6) ∘.+ (4 5⍴⍳20) ⍝ arbitrary ranks</p>
-<ul>
-<li><code>⍣</code> is a dyadic operator called power:</li>
-</ul>
-<p>Try:</p>
-<p>({1+÷⍵}⍣10)1 ⍝ one of the few times when you need parens! {1+÷⍵}⍣≡1</p>
-<p><strong>Exercise 11a</strong> explain <code>∨.=</code> (et al) in words.</p>
-<p><strong>Exercise 11b</strong> explain <code>∨.∧</code> (used in transitive closure of a boolean matrix)</p>
-<p>Operator muse:</p>
-<ul>
-<li>Operators take fns or arrays as operands; creates a 3-layer food chain
-<ul>
-<li>Order 0: array</li>
-<li>Order 1: function, takes (array) <em>arguments</em></li>
-<li>Order 2: operator, takes (array or function) <em>operands</em></li>
-</ul></li>
-<li>Functions are right-associative and monadic functions are prefix.</li>
-<li>Operators are  left-associative and monadic operators are postfix.</li>
-<li>Some kind of beautiful symmetry there.</li>
-<li>(But it's not completely symmetrical, because the grammar distinguishes monadic/dyadic operators but not monadic/dyadic functions.)</li>
-</ul>
-<div class="h_tag">
-<a href="#Thinking-arrays" id="Thinking-arrays" class="autoheader_anchor">
-<h2>Thinking arrays</h2>
-</a>
-</div>
-<ul>
-<li>Use brace nesting depth as an example. First show a lisp-style recursive algorithm; then show how to do it a whole array at a time, bang!
-<p>⍝ Tail recursion:       brace1←{         ⍺←⍬         0=≢⍵:⍺         (⍺,1 ¯1 0['()'⍳⊃⍵]+⊃⌽⍺)∇ 1↓⍵       }</p>
-<p>⍝ Array thinking:       brace2←{(+\⍵='(')-(+\⍵=')')}       brace3←{+\1 ¯1 0['()'⍳⍵]}</p></li>
-<li>Modern processors love arrays. Arthur Whitney recommended these videos:
-<ul>
-<li>Bjarne Stroustrup. Vector good. Linked list bad. https://www.youtube.com/watch?v=YQs6IC-vgmo</li>
-<li>Mike Acton. Vector good. Struct &amp; object bad. https://www.youtube.com/watch?v=rX0ItVEVjHc</li>
-</ul></li>
-</ul>
-<p><strong>Exercise</strong> Rainfall: https://medium.com/@bearsandsharks/i-failed-a-twitter-interview-52062fbb534b</p>
-<p><strong>Exercise</strong> Luhn credit card checksum algorithm: https://en.wikipedia.org/wiki/Luhn_algorithm</p>
-<div class="h_tag">
-<a href="#Afternoon" id="Afternoon" class="autoheader_anchor">
-<h1>Afternoon</h1>
-</a>
-</div>
-<div class="h_tag">
 <a href="#Reading-APL" id="Reading-APL" class="autoheader_anchor">
 <h2>Reading APL</h2>
 </a>
 </div>
-<p>(Powerpoint 11-14)</p>
-<p>How to understand a line of APL: a detailed look at the game of life one-liner http://dfns.dyalog.com/n_life.htm</p>
-<p>http://www.youtube.com/watch?v=a9xAKttWgP4</p>
-<ul>
-<li><code>life←{↑1 ⍵∨.∧3 4=+/,¯1 0 1∘.⊖¯1 0 1∘.⌽⊂⍵}</code></li>
-<li>Try it out in small chunks, starting from the right.</li>
-<li>Split it into <em>named</em> small chunks on several lines.</li>
-<li>Know what's a function and what's an operator.</li>
-<li>Note the creative use of inner product.</li>
-<li>Finally try reading it from left to right.</li>
-</ul>
-<p><strong>Exercise 12</strong> (reading)</p>
-<ul>
-<li><code>(2×a)÷⍨(-b)(+,-)0.5\*⍨(b*2)-4×a×c</code> (“2 times a divided into minus b plus or minus the square root of [the discriminant] b squared minus 4 a c”)</li>
-<li>Find primes from 1 to R: <code>(~R∊R∘.×R)/R←1↓⍳R</code></li>
-<li>Or <code>{(~R∊R∘.×R)/R←1↓⍳⍵}</code></li>
-<li>Or <code>{{(~⍵∊⍵∘.×⍵)/⍵}1↓⍳⍵}</code></li>
-<li>Or <code>{(~⍵∊⍵∘.×⍵)/⍵}∘{1↓⍳⍵}</code></li>
-</ul>
-<p>Quirks that you may notice:</p>
-<ul>
-<li>Some APL programmers like to avoid parentheses, to reduce the cognitive load!</li>
-<li>Hence, put simple argument on left: <code>1+expr</code>, <code>0&lt;expr</code></li>
-<li>Or, use Commute: <code>2*⍨...</code></li>
-<li>N.B. game of life has no parentheses, partly because (some) primitives (e.g. Residue) were carefully designed to be most useful with a simple constant on the <em>left</em>.</li>
-<li>See also <em>Code Golf</em>.</li>
-</ul>
+<p>(Powerpoint 16&amp;17)</p>
 <div class="h_tag">
-<a href="#Nested-arrays" id="Nested-arrays" class="autoheader_anchor">
-<h2>Nested arrays</h2>
+<a href="#Multi-Line-Dfns--Procedures" id="Multi-Line-Dfns--Procedures" class="autoheader_anchor">
+<h2>Multi-Line Dfns &amp; Procedures</h2>
 </a>
 </div>
-<ul>
-<li>Enclose (monadic <code>⊂</code>) boxes any array into a scalar enclosure.</li>
-<li>First (monadic <code>⊃</code>) is a handy inverse.</li>
-<li>Enclose of a simple scalar is unchanged: turtles all the way down.</li>
-<li>⍴⊂ is a handy idiom for constructing nested arrays: <code>3⍴⊂'Jay'</code>.</li>
-<li>Depth of an array is the level of nesting (0 for simple scalar).</li>
-<li>Mix and Split trade off rank for depth.</li>
-<li>Prototypical items.</li>
-</ul>
-<div class="h_tag">
-<a href="#Indexing-and-partial-assignment" id="Indexing-and-partial-assignment" class="autoheader_anchor">
-<h2>Indexing and partial assignment</h2>
-</a>
-</div>
-<p><strong>Exercise M1</strong> (indexing)</p>
-<ul>
-<li>Show Pick: <code>5⊃vec</code>, <code>(⊂2 3)⊃mat</code></li>
-<li>Show Squad: <code>5⌷vec</code>, <code>2 3⌷mat</code></li>
-<li>Finally show the anomalous syntax for bracket indexing: <code>vec[5]</code>, <code>mat[2;3]</code></li>
-<li>N.B. bracket indexing can't be used as an operand function :-(</li>
-<li>Using an array <em>inside</em> the brackets can be very useful: <code>'.⌹'[mat]</code></li>
-<li>Indexed assignment works intuitively: <code>vec[3]←99</code></li>
-<li>N.B. arrays still have <strong>value</strong> semantics; other namings of the same array are <em>not</em> affected.</li>
-<li>Selective assignment: <code>(3↑vec)←4 5 6</code> <em>also</em> works intuitively!</li>
-<li>But N.B. only for “structural” primitive functions; you can't do <code>(0×A)←1</code>.</li>
-</ul>
-<div class="h_tag">
-<a href="#Defined-operators" id="Defined-operators" class="autoheader_anchor">
-<h2>Defined operators</h2>
-</a>
-</div>
-<ul>
-<li>Lambda-style operator definition with <code>⍺⍺</code> and <code>⍵⍵</code>.</li>
-<li>(Really defines the <em>derived function</em>, not the operator, because you have access to <code>⍺</code> and <code>⍵</code> too.)</li>
-</ul>
-<div class="h_tag">
-<a href="#Tour-De-Force-7-Quicksort" id="Tour-De-Force-7-Quicksort" class="autoheader_anchor">
-<h2>Tour De Force 7: Quicksort</h2>
-</a>
-</div>
-<p>see file://Talks/Tour de Force/7.htm</p>
-<p><strong>Exercise 14</strong> (dops)</p>
-<p>Try:</p>
-<p>double←{2×⍵} twice←{⍺⍺ ⍺⍺ ⍵} double twice 3</p>
-<div class="h_tag">
-<a href="#Rank" id="Rank" class="autoheader_anchor">
-<h2>Rank</h2>
-</a>
-</div>
-<p><strong>Exercise R1</strong> (rank)</p>
-<p>Try:</p>
-<p>⍝ ensure ]box on in your session ⎕io←0</p>
-<p>⍝ rank with a monadic function</p>
-<p>x←2 3 5⍴⍳30 x ⊂⍤1 ⊢x ⊂⍤2 ⊢x ⊂⍤3 ⊢x ⊂⍤0 ⊢x ⍝ ⊂ on a simple scalar (rank 0 array) is that scalar itself</p>
-<p>⊂⍤¯1 ⊢x (⊂⍤¯1 ⊢x) ≡ ⊂⍤2 ⊢x (⊂⍤¯1 ⊢x) ≡ ⊂⍤((≢⍴x)-1) ⊢x ≢⍴x (≢⍴x)-1</p>
-<p>⊂⍤¯1 ⊢5 2⍴⍳10 ⊂⍤¯1 ⊢5 2 3⍴⍳60 ⊂⍤¯1 ⊢5 2 3 4⍴⍳120 ⊂⍤¯1 ⊢5 2 3 2 2⍴⍳120</p>
-<p>a←2 3 4⍴⎕a a ⊂⍤1 ⊢a ⊂⍤2 ⊢a ⊂⍤3 ⊢a ⊂⍤0 ⊢a</p>
-<p>⊂⍤¯1 ⊢a</p>
-<p>And:</p>
-<p><strong>Exercise R2</strong> (rank)</p>
-<p>x←3 5⍴⎕a x y←3 6⍴⍳18 y</p>
-<p>x {⍺⍵}⍤1 ⊢y x {⍺⍵}⍤1 1 ⊢y x {⍺⍵}⍤1 2 ⊢y x {⍺⍵}⍤2 1 ⊢y x {⍺⍵}⍤0 2 ⊢y ⊂⍤2 ⊢x {⍺⍵}⍤0 2 ⊢y x {⍺⍵}⍤2 0 ⊢y ⊂⍤2 ⊢x {⍺⍵}⍤2 0 ⊢y</p>
-<div class="h_tag">
-<a href="#Key" id="Key" class="autoheader_anchor">
-<h2>Key</h2>
-</a>
-</div>
-<p><strong>Exercise R3</strong> (key)</p>
-<p>Try:</p>
-<p>⍝ ensure ]box on in your session ⎕io←0</p>
-<p>x←'Mississippi' {⍺,≢⍵}⌸x {⍺,≢⍵}⌸2/x {⍺,≢⍵}⌸3/x x{⍺⍵}⌸⍳≢x</p>
-<p>⎕rl←7<em>5 ⍝ set random seed to get reproducible random numbers</p>
-<p>x←('zero' 'one' 'two' 'three' 'four')[?20⍴5] x y←?20⍴10 y x {⍺⍵}⌸ y x {⍺,≢⍵}⌸ y x {⍺,+⌿⍵}⌸ y x {⍺,⌈⌿⍵}⌸ y x {⍺,⌊⌿⍵}⌸ y x {⍺,(+⌿÷≢)⍵}⌸ y</p>
-<p>x {⊂⍵}⌸ y x {+/⍵}⌸ y</p>
-<p>y←?20 3⍴10 x {⍺⍵}⌸ y x {⍺,⊂+⌿⍵}⌸ y</p>
-<div class="h_tag">
-<a href="#Procedures" id="Procedures" class="autoheader_anchor">
-<h2>Procedures</h2>
-</a>
-</div>
-<p>(Powerpoint, 15-18)</p>
-<blockquote>
-<p>Unfortunately, however, APL still splits programming into a world of expressions and a world of statements. Thus the effort to write one-line programs is partly motivated by the desire to stay in the more orderly world of expressions. –John Backus, “Can Programming Be Liberated from the von Neumann Style?”</p>
-</blockquote>
+<p>(Powerpoint, 18-21)</p>
 <ul>
 <li>APL had tradfns long before dfns.</li>
 <li>The only control flow was <code>→</code> (goto).</li>
@@ -447,91 +284,9 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 <li>Variables had dynamic scope.</li>
 </ul>
 <div class="h_tag">
-<a href="#Error-trapping" id="Error-trapping" class="autoheader_anchor">
-<h2>Error trapping</h2>
+<a href="#Note-remaining-exercises-not-described-here" id="Note-remaining-exercises-not-described-here" class="autoheader_anchor">
+<h2>Note: remaining exercises not described here.</h2>
 </a>
 </div>
-<p>(Powerpoint 19-23)</p>
-<ul>
-<li>Error guards in dfns.</li>
-<li><code>:Trap</code> in tradfns.</li>
-</ul>
-<div class="h_tag">
-<a href="#Interactive-debugging" id="Interactive-debugging" class="autoheader_anchor">
-<h2>Interactive debugging</h2>
-</a>
-</div>
-<ul>
-<li>Using the tracer to step through code.</li>
-<li>Using the session to examine variables.</li>
-<li>Edit windows on variables show live updates.</li>
-</ul>
-<div class="h_tag">
-<a href="#Schisms" id="Schisms" class="autoheader_anchor">
-<h2>Schisms</h2>
-</a>
-</div>
-<blockquote>
-<p>“Should array indices start at 0 or 1? My compromise of 0.5 was rejected without, I thought, proper consideration.” –Stan Kelly Bootle</p>
-</blockquote>
-<ul>
-<li>Index origin can be 0 or 1 (everyone agrees it shouldn't be settable, but they don't agree what it should be).</li>
-<li>Floating vs grounded array theory.</li>
-<li>APL2 (axis “operator”) vs Rationalised APL (rank operator).</li>
-</ul>
-<div class="h_tag">
-<a href="#Tacit-programming" id="Tacit-programming" class="autoheader_anchor">
-<h2>Tacit programming</h2>
-</a>
-</div>
-<ul>
-<li>https://en.wikipedia.org/wiki/Tacit_programming</li>
-<li>Syntax of function trains (need some compelling examples)</li>
-<li>Tacit or “point free” forms:
-<ul>
-<li>Compose</li>
-<li>Commute</li>
-<li>Atop</li>
-<li>Fork</li>
-<li>Right operand currying</li>
-</ul></li>
-</ul>
-<p><strong>Exercise 15</strong> (tacit)</p>
-<p>(∨/ ≤ ∧/) booleanvector</p>
-<p>(Answer: it checks for all zeros OR all ones.)</p>
-<div class="h_tag">
-<a href="#Namespaces" id="Namespaces" class="autoheader_anchor">
-<h2>Namespaces</h2>
-</a>
-</div>
-<ul>
-<li>What’s an array, revised:
-<ul>
-<li>Rectangular collection of items,</li>
-<li>arranged along zero or more orthogonal axes,</li>
-<li>of numbers, characters, arrays <strong>and refs</strong>.</li>
-</ul></li>
-</ul>
-<p><strong>Exercise 16</strong> (namespaces)</p>
-<p>Try:</p>
-<p>ns1←⎕NS '' ns1.x←42 ns1.x ns1.(x+x) ns1.(double←{⍵+⍵}) ns1.(double x) ns1.double x ns1.double 17 ns2←⎕NS '' ns2.x←99 namespaces←ns2 ns2 ≢namespaces namespaces.(x+x) (⌽namespaces).(x+x)</p>
-<div class="h_tag">
-<a href="#System-functions" id="System-functions" class="autoheader_anchor">
-<h2>System functions</h2>
-</a>
-</div>
-<p><strong>Exercise M2</strong> (sysfns)</p>
-<ul>
-<li>Provide I/O, system interfaces etc. Roughly equivalent to C standard library.</li>
-<li>Mention <code>⎕FREAD</code>, <code>⎕NREAD</code>, <code>⎕XML</code>, <code>⎕R</code>/<code>⎕S</code>, …</li>
-</ul>
-<div class="h_tag">
-<a href="#Building-applications" id="Building-applications" class="autoheader_anchor">
-<h2>Building applications</h2>
-</a>
-</div>
-<ul>
-<li>Turn one of our exercises into a web page or service with MiServer ?</li>
-</ul>
 </body>
 </html>
