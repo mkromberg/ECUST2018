@@ -1,0 +1,24 @@
+﻿⍝ We have seen:
+X←⍳4
++/X     ⍝ Reduction
+X +.× X ⍝ Inner product
+X ∘.+ X ⍝ Outer product
+
+⍝ Each:
+
+A←'Jay' 'Foad'
+⍴A
+⍴¨A
+⌽A
+⌽¨A
+
+⍝ Key:
+
+x←('zero' 'one' 'two' 'three' 'four')[?20⍴5]
+x
+y←?20⍴10
+y
+x {⍺ ⍵}⌸ y
+x {⍺,≢⍵}⌸ y
+x {⍺,+⌿⍵}⌸ y
+x {⍺,⌈⌿⍵}⌸ y
